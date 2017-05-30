@@ -1,0 +1,18 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+  compatible = "brcm,bcm2835", "brcm,bcm2708";
+
+        fragment@0 {
+	  target = <&leds>;
+          __overlay__ {
+            hb_led: led {
+              label = "led1";
+              linux,default-trigger = "heartbeat";
+              gpios = <&gpio 17 0>;
+            };
+          };
+        };
+
+};

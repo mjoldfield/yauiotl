@@ -1,0 +1,4 @@
+#! /bin/sh
+
+dtc -@ -I dts -O dtb -o rotenc.dtbo rotenc-overlay.dts
+sudo cp rotenc.dtbo /boot/overlays/

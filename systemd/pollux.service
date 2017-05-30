@@ -1,0 +1,15 @@
+[Unit]
+Description="Toy IOT Light - LED"
+
+[Service]
+Type=simple
+User=mjo
+WorkingDirectory=/home/mjo/aws-iot-toys
+ExecStart=/usr/bin/python bin/toy-light.py pollux-config/ --hasLED
+StandardInput=null
+StandardOutput=syslog
+StandardError=syslog
+Restart=on-failure
+
+[Install]
+WantedBy=network-online.target

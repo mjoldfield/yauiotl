@@ -1,0 +1,14 @@
+Assuming that you’ve installed stack this is all you need to
+do:
+
+   $ stack build && stack exec pdf-exe && open *.pdf
+
+All the design stuff is in src/Lib.hs.
+
+--
+
+To render PDFs to PNG thumbnails do e.g.:
+
+
+  $ for f in *.pdf ; do convert -trim -density 20 $f -background white -alpha remove -set filename:f %t.png 'png:%[filename:f]' ; done
+

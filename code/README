@@ -1,0 +1,57 @@
+This is the python source for the AWS IoT Lamp application.
+
+Typically you'll run it from this directory, having set up
+a directory full of AWS credentials somewhere.
+
+For example:
+
+   $ bin/toy-light.py credential_dir/ --hasLED
+
+or
+
+   $ bin/toy-light.py credential_dir/
+
+if this the remote control.
+
+GENERAL NOTES
+
+This has not been properly packaged, so in the unlikely event that
+you actually want to build it, please contact me if you're having
+any problems. 
+
+CREDENTIALS
+
+These typically have names like this:
+
+  $ ls 
+  config.json
+  rootCA.pem
+  start.sh
+  toy-light.cert.pem
+  toy-light.private.key
+  toy-light.public.key
+  
+the names are globbed (see lib/awsiot.py for details) so there’s
+some latitude.
+
+Most of the files come from the AWS control panel, but config.json
+is a local thing. A minimal example is:
+
+  {
+      "host": "xxxxxxxxxxxx.iot.us-east-1.amazonaws.com"
+  }
+
+where the host would actually reflect the real device.
+
+DEPENDENCIES
+
+There are some but I've not documented them. You'll need at least:
+
+   - the AWS IoT SDK
+   - evdev
+   - pigpio
+
+CONTACT
+
+M J Oldfield, yauiotl-2017-05@mjoldfield.com
+

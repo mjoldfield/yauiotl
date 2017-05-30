@@ -1,0 +1,37 @@
+/* ex ShiftPlusOne's posting in https://www.raspberrypi.org/forums/viewtopic.php?f=107&t=115394 */
+
+/dts-v1/;
+/plugin/;
+
+/ {
+   compatible = "brcm,bcm2835", "brcm,bcm2708", "brcm,bcm2709";
+   
+    fragment@0 {
+        target-path = "/soc/gpio";
+        __overlay__ {
+            butt_pins: butt_pins {
+                brcm,pins = <25>;
+                brcm,function = <0>;
+                brcm,pull = <2>;
+            };
+        };
+    };
+
+   fragment@1 {
+      target-path = "/soc";
+      __overlay__ {
+         keypad: keypad {
+            compatible = "gpio-keys";
+            #address-cells = <1>;
+            #size-cells = <0>;
+            pinctrl-names = "default";
+            pinctrl-0 = <&butt_pins>;
+            button@13 {
+               label = "Test BTN0";
+               linux,code = <0x100>;
+               gpios = <&gpio 25 1>;
+            };
+         };
+      };
+   };
+};

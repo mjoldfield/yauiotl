@@ -1,0 +1,4 @@
+#! /bin/sh
+
+dtc -@ -I dts -O dtb -o heartbeat.dtbo heartbeat-overlay.dts
+sudo cp heartbeat.dtbo /boot/overlays/

@@ -1,0 +1,8 @@
+Device tree overlays for controls.
+
+  - button
+  - rotary-encoder
+  - heartbeat (status LED which beats according to system load).
+
+The do-it scripts in each directory compile and install the overlays.
+
