@@ -1,5 +1,7 @@
 # Yet Another Useless IoT Light
 
+![The Light](http://mjoldfield.com/atelier/2017/05/yauiotl-case.jpg)
+
 These are the source files for an AWS IoT based light I built.
 
 You can read more about it on [my website](http://mjoldfield.com/atelier/2017/05/yauiotl.html).
